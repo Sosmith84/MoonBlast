@@ -16,8 +16,6 @@ public class HUD {
     private int health;
     private int score;
     private int bombcount;
-    private int level;
-    private int time;
     private boolean currentLaser; //Fire = true, ice = false;
     private final String gameover = "GAME OVER";
     
@@ -26,9 +24,6 @@ public class HUD {
         this.score = 0;
         this.bombcount = 3;
         this.currentLaser = true;
-        this.time = 9999;
-        this.level = 1;
-        decreaseTime();
     }
 
     public int getHealth() {
@@ -43,9 +38,7 @@ public class HUD {
         return bombcount;
     }
     
-    public int getLevel(){
-        return level;
-    }
+    
 
     public boolean isCurrentLaser() {
         return currentLaser;
@@ -73,22 +66,12 @@ public class HUD {
 //    public void reduceBomb(){
 //        this.bombcount --;
 //    }
+//    
+//    public void increaseLevel(){
+//        this.level++;
+//    }
     
-    public void increaseLevel(){
-        this.level++;
-    }
     
-    public void decreaseTime(){
-        while(true){
-            if(time <=0){
-                time = 9999;
-                increaseLevel();
-            }
-            else{
-                time--;
-            }
-        }
-    }
     
     public void lose(){
         
